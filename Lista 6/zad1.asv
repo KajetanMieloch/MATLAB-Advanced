@@ -1,0 +1,26 @@
+[X,Y] = meshgrid(-10:0.5:10,-10:0.5:10);
+
+Q1 = 1;
+Q2 = 1;
+
+% Position of charges
+x1 = -3;
+y1 = 0;
+x2 = 3;
+y2 = 0;
+
+SilaCoulombaKM(Q1,Q2,x1,x2,y1,y2,X,Y)
+
+hold on
+subplot(2,1,1)
+quiver(X,Y,Ex,Ey)
+title('Electric field for same charges')
+
+Q2 = -1
+
+SilaCoulombaKM(Q1,Q2,x1,x2,y1,y2,X,Y)
+
+subplot(2,1,2)
+quiver(X,Y,Ex,Ey)
+title('Electric field for opposite charges')
+hold off
